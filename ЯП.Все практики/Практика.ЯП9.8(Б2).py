@@ -1,4 +1,4 @@
-def second_largest(chiselki, largest=None, second=None):
+def second_largest(chiselki, largest=0, second=0):
     if not chiselki:  #tсли список пуст,возвращаем второй по величине
         return second
     pervi = chiselki[0]
@@ -7,10 +7,10 @@ def second_largest(chiselki, largest=None, second=None):
         return second
 
     #для определения второго по величине элемента
-    if largest is None or pervi > largest:
+    if largest is 0 or pervi > largest:
         second = largest  #обновляем второго бро по величине
         largest = pervi
-    elif pervi != largest and (second is None or pervi > second):
+    elif pervi != largest and (second is 0 or pervi > second):
         second = pervi
 
     #вызов для следующего числа
@@ -24,7 +24,7 @@ while True:
     chiselki.append(chis)
 
 result = second_largest(chiselki)
-if result is not None:
+if result is not 0:
     print(f"Второй по величине элемент: {result}")
 else:
     print("Недостаточно уникальных элементов для определения второго по величине.")
